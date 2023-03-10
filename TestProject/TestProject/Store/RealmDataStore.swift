@@ -16,7 +16,7 @@ class RealmDataStore {
     func addUser(firstName: String,
                  lastName: String,
                  email: String) -> Bool {
-        if !isUserRegistered(with: email) {
+        if !isUserRegistered(with: firstName) {
             let user = User()
             user.firstName = firstName
             user.lastName = lastName
@@ -28,22 +28,14 @@ class RealmDataStore {
         return false
     }
     
-//    func getUser(email: String, password: String) -> User? {
-//        if let user = getUser(with: login),
-//           user.password == password {
-//            return user
-//        }
-//        return nil
-//    }
-    
-    func getUser(with email: String) -> User? {
+    func getUser(with firstName: String) -> User? {
         let user = realm?.object(ofType: User.self,
-                                 forPrimaryKey: email)
+                                 forPrimaryKey: firstName)
         return user
     }
 
-    func isUserRegistered(with email: String) -> Bool {
-        return getUser(with: email) != nil
+    func isUserRegistered(with firstName: String) -> Bool {
+        return getUser(with: firstName) != nil
     }
     
     private func saveObject(user: User) {

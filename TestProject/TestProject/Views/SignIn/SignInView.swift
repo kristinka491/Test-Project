@@ -23,14 +23,17 @@ struct SignInView: View {
                         .padding(.bottom, 78)
                     
                     VStack(spacing: 35) {
-                        AuthorizationTextField(placeHolder: StringConstants.signInFirstNamePlaceholder, text: $viewModel.firstName)
+                        AuthorizationTextField(placeHolder: StringConstants.signInFirstNamePlaceholder,
+                                               text: $viewModel.firstName)
                         
-                        AuthorizationTextField(placeHolder: StringConstants.signInLastNamePlaceholder, text: $viewModel.lastName)
+                        AuthorizationTextField(placeHolder: StringConstants.signInLastNamePlaceholder,
+                                               text: $viewModel.lastName)
                         
                         VStack {
-                            AuthorizationTextField(placeHolder: StringConstants.signInEmailPlaceholder, text: $viewModel.email)
+                            AuthorizationTextField(placeHolder: StringConstants.signInEmailPlaceholder,
+                                                   text: $viewModel.email)
                             if !viewModel.isEmailValid {
-                                Text(StringConstants.wrongEmailMessage)
+                                Text(StringConstants.signInInvalidEmail)
                                     .font(.montserrat(.bold, size: 10))
                                     .foregroundColor(.red)
                             }
@@ -76,7 +79,7 @@ struct SignInView: View {
                     
                     VStack(alignment: .center, spacing: 38) {
                         Button {
-                            print("---")
+                            debugPrint("Tapped sign in with google")
                         } label: {
                             Label(StringConstants.signInSignInWithGoogleButtonTitle, image: "SignInWithGoogle")
                                 .font(.montserrat(.regular, size: 12))
@@ -85,7 +88,7 @@ struct SignInView: View {
                         }
                         
                         Button {
-                            print("---")
+                            debugPrint("Tapped sign in with apple")
                         } label: {
                             Label(StringConstants.signInSignInWithAppleButtonTitle, image: "SignInWithApple")
                                 .font(.montserrat(.regular, size: 12))

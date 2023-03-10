@@ -22,11 +22,9 @@ class SignInViewModel: ObservableObject {
     private let realmDataStore = RealmDataStore.shared
     private var publishers = Set<AnyCancellable>()
     
-    
     init() {
-        setupValidations()
+        setUpValidations()
     }
-
 
     func saveUser() {
         let isUserRegistered = realmDataStore.addUser(firstName: firstName, lastName: lastName, email: email)
@@ -37,7 +35,7 @@ class SignInViewModel: ObservableObject {
         }
     }
     
-    private func setupValidations() {
+    private func setUpValidations() {
         $email
             .map { email in
                 let emailPredicate = NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")

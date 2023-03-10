@@ -9,11 +9,14 @@ import Foundation
 
 enum DataError {
     case userIsRegistered
+    case wrongUsernameOrPassword
 
     var title: String {
         switch self {
         case .userIsRegistered:
             return StringConstants.userIsRegisteredTitle
+        case .wrongUsernameOrPassword:
+            return StringConstants.wrongNameOrPasswordTitle
         }
     }
 
@@ -21,6 +24,8 @@ enum DataError {
         switch self {
         case .userIsRegistered:
             return StringConstants.userIsRegisteredMessage
+        case .wrongUsernameOrPassword:
+            return StringConstants.wrongNameOrPasswordMessage
         }
     }
 }

@@ -9,7 +9,8 @@ import Foundation
 import RealmSwift
 
 class User: Object, ObjectKeyIdentifiable {
-    @Persisted(primaryKey: true) var email = ""
-    @Persisted var firstName = ""
+    @Persisted(primaryKey: true) var firstName = ""
     @Persisted var lastName = ""
+    @Persisted var email = ""
+    
 } 
