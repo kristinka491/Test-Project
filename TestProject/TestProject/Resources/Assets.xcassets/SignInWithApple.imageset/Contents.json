@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "SignInWithApple.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
