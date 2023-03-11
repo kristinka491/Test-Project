@@ -45,7 +45,7 @@ struct StringConstants {
     static let profilePaymentMethod = "Payment method"
     static let profileBalance = "Balance"
     static let profileBalanceAmount = "$ 1593"
-    static let profilePaymentHistory = "Payment History"
+    static let profileTradeHistory = "Trade History"
     static let profileRestorePurchase = "Restore Purchase"
     static let profileHelp = "Help"
     static let profileLogOut = "Log out"

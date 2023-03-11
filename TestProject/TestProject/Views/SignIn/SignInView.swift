@@ -25,7 +25,6 @@ struct SignInView: View {
                     VStack(spacing: 35) {
                         AuthorizationTextField(placeHolder: StringConstants.signInFirstNamePlaceholder,
                                                text: $viewModel.firstName)
-                        
                         AuthorizationTextField(placeHolder: StringConstants.signInLastNamePlaceholder,
                                                text: $viewModel.lastName)
                         

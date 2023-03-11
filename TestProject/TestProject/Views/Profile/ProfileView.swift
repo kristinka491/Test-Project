@@ -8,64 +8,41 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @StateObject var viewModel = ProfileViewModel()
+    
     var body: some View {
         ZStack {
             Color.backgroundColor
-                .ignoresSafeArea()
+            GeometryReader { reader in
+                                Color.backgroundColor
+                                    .frame(height: reader.safeAreaInsets.top, alignment: .top)
+                                    .ignoresSafeArea()
+                            }
             
-            VStack(alignment: .leading) {
-                HStack(spacing: 140) {
-                    Image(systemName: "arrow.left")
-                    
-                    Text(StringConstants.profileTitle)
-                        .font(.montserrat(.bold, size: 12))
-                }
-                .padding(.bottom, 20)
-                .padding(.leading, 20)
-                
-                
-                Image("ProfileImage")
-                    .resizable()
-                    .frame(width: 60, height: 60)
-                    .aspectRatio(contentMode: .fit)
-                    .clipShape(Circle())
-                    .padding(.bottom, 9)
-                
-                Button(action: {
-//                    TODO:
-                    print("----")
-                }, label: {
-                    Text(StringConstants.profileChangePhotoButtonTitle)
-                        .font(.montserrat(.bold, size: 8))
-                        .foregroundColor(.additionalTextColor)
-                })
-                .padding(.bottom, 20)
-                
-                Text(StringConstants.profileUsername)
-                    .font(.montserrat(.bold, size: 12))
-                Button(action: {
-//                    TODO:
-                    print("----")
-                }, label: {
-                    HStack(alignment: .center, spacing: 46) {
-                        Image(systemName: "square.and.arrow.up")
-                            .foregroundColor(Color.buttonForegroundColor)
-                        Text(StringConstants.profileUploadItemButtonTitle)
-                            .font(.montserrat(.bold, size: 14))
-                            .foregroundColor(.buttonForegroundColor)
+            VStack(spacing: 0) {
+                VStack(alignment: .leading, spacing: 0) {
+                    HStack(spacing: 0) {
+                        Image(systemName: "arrow.left")
+                            .padding(.leading, 20)
+                        Text(StringConstants.profileTitle)
+                            .font(.montserrat(.bold, size: 12))
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding(.trailing, 40)
                     }
-                })
-                .frame(height: 46)
-                .frame(maxWidth: .infinity)
-                .background(Color.buttonBackgroundColor)
-                .cornerRadius(15)
-                .padding(.top, 38)
-                .padding(.leading, 43)
-                .padding(.trailing, 42)
-                Spacer()
-
+                    .padding(.bottom, 20)
+                }
+                
+                List(viewModel.profileSettings, id: \.title) { item in
+                    if case .header = item {
+                      ProfileHeaderCell()
+                    } else {
+                        ProfileSettingsCell(item: item)
+                    }
+                }
+                .scrollContentBackground(.hidden)
+                .listStyle(.plain)
             }
-        }
+        }.toolbar(.hidden, for: .navigationBar)
     }
 }
 
