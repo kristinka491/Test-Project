@@ -16,15 +16,12 @@ struct MockView: View {
                                     .frame(height: reader.safeAreaInsets.top, alignment: .top)
                                     .ignoresSafeArea()
                             }
-            ScrollView {
-                ForEach(0...100, id: \.self ) {_ in
-                    Text(StringConstants.mockTitle)
+            VStack {
+                Spacer()
+                Text(StringConstants.mockTitle)
                         .font(.montserrat(.bold, size: 20))
-                }
+                Spacer()
             }
-            .padding(.leading, -10)
-            .padding(.bottom, 43)
-            .padding(.top, 1)
         }.background(ignoresSafeAreaEdges: .top)
     }
 }

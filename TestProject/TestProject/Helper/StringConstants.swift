@@ -34,7 +34,7 @@ struct StringConstants {
     static let loginLoginButtonTitle = "Login"
     
     // Mock
-    static let mockTitle = "Will be available soonWill be available soonWill be available soonWill be available soonWill be available soon"
+    static let mockTitle = "Will be available soon"
     
     // Profile
     static let profileTitle = "Profile"

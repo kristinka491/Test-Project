@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProfileSettingsCell: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var item: ProfileSettingsEnum
     
     var body: some View {
@@ -35,6 +37,11 @@ struct ProfileSettingsCell: View {
         .listRowSeparator(.hidden)
         .listRowBackground(Color.backgroundColor)
         .listRowInsets(.init(top: 0, leading: 32, bottom: 0, trailing: 46))
+        .onTapGesture {
+            if case .logOut = item {
+                presentationMode.wrappedValue.dismiss()
+            }
+        }
     }
 }
 

@@ -100,7 +100,7 @@ struct SignInView: View {
                     .padding(.trailing, 99)
                 }
             }
-            .navigationDestination(isPresented: $viewModel.isRegistered) {
+            .fullScreenCover(isPresented: $viewModel.isRegistered) {
                 TabbarView()
             }
         }.alert(DataError.userIsRegistered.title, isPresented: $viewModel.isShowError) {

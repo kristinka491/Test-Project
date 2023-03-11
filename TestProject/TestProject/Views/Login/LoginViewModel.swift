@@ -30,7 +30,13 @@ class LoginViewModel: ObservableObject {
             isShowError = true
         } else {
             isRegistered = true
+            clearFields()
         }
+    }
+    
+    private func clearFields() {
+        firstName = ""
+        password = ""
     }
     
     private func setUpValidations() {

@@ -6,8 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
+import PhotosUI
 
 class ProfileViewModel: ObservableObject {
+    @Published var selectedItem: PhotosPickerItem?
+    @Published var selectedImageData: Data?
+    
     var profileSettings: [ProfileSettingsEnum]
     
     init() {

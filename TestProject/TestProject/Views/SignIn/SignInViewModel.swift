@@ -31,8 +31,15 @@ class SignInViewModel: ObservableObject {
         if !isUserRegistered {
             isShowError = true
         } else {
+            clearFields()
             isRegistered = true
         }
+    }
+    
+    private func clearFields() {
+        firstName = ""
+        lastName = ""
+        email = ""
     }
     
     private func setUpValidations() {

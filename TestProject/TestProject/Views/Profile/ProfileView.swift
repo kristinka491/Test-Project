@@ -34,7 +34,7 @@ struct ProfileView: View {
                 
                 List(viewModel.profileSettings, id: \.title) { item in
                     if case .header = item {
-                      ProfileHeaderCell()
+                      ProfileHeaderCell(viewModel: viewModel)
                     } else {
                         ProfileSettingsCell(item: item)
                     }

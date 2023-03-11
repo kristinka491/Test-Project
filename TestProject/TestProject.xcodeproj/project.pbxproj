@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3E59972C29BB239C00C6453E /* TestProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E59972B29BB239C00C6453E /* TestProjectApp.swift */; };
-		3E59972E29BB239C00C6453E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E59972D29BB239C00C6453E /* ContentView.swift */; };
 		3E59973029BB239D00C6453E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E59972F29BB239D00C6453E /* Assets.xcassets */; };
 		3E59973329BB239D00C6453E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E59973229BB239D00C6453E /* Preview Assets.xcassets */; };
 		3E59975129BB2B4F00C6453E /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E59974B29BB29F900C6453E /* Montserrat-Regular.ttf */; };
@@ -46,7 +45,6 @@
 		37C6BD96091D24EE8DBC51C7 /* Pods-TestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProject.release.xcconfig"; path = "Target Support Files/Pods-TestProject/Pods-TestProject.release.xcconfig"; sourceTree = "<group>"; };
 		3E59972829BB239C00C6453E /* TestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E59972B29BB239C00C6453E /* TestProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProjectApp.swift; sourceTree = "<group>"; };
-		3E59972D29BB239C00C6453E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3E59972F29BB239D00C6453E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E59973229BB239D00C6453E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3E59973D29BB295400C6453E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				3E59975729BB2E7C00C6453E /* Views */,
-				3E59972D29BB239C00C6453E /* ContentView.swift */,
 				3E59975A29BB2EC600C6453E /* Helper */,
 				3E59975929BB2EBD00C6453E /* Network */,
 				3E59975829BB2EB600C6453E /* Store */,
@@ -469,7 +466,6 @@
 				3E59977B29BB7E8E00C6453E /* TabbarView.swift in Sources */,
 				3E59977E29BB7EE500C6453E /* MockView.swift in Sources */,
 				3E59979029BCB8AA00C6453E /* ProfileSettingsEnum.swift in Sources */,
-				3E59972E29BB239C00C6453E /* ContentView.swift in Sources */,
 				3E59978629BCA2C700C6453E /* RoundedCorner.swift in Sources */,
 				3E59976129BB2F4F00C6453E /* SignInView.swift in Sources */,
 				3E59977729BB5E7500C6453E /* DataError.swift in Sources */,
