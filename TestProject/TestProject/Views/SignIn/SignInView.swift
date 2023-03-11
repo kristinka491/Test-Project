@@ -40,7 +40,7 @@ struct SignInView: View {
                         }
                         
                         Button(action: {
-                            viewModel.saveUser()
+                            viewModel.registerUser()
                         }, label: {
                             Text(StringConstants.signInButtonTitle)
                                 .font(.montserrat(.bold, size: 14))
@@ -102,7 +102,7 @@ struct SignInView: View {
                 }
             }
             .navigationDestination(isPresented: $viewModel.isRegistered) {
-                HomeView()
+                TabbarView()
             }
         }.alert(DataError.userIsRegistered.title, isPresented: $viewModel.isShowError) {
         } message: {

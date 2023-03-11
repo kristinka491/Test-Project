@@ -33,5 +33,21 @@ struct StringConstants {
     static let loginPasswordPlaceholder = "Password"
     static let loginLoginButtonTitle = "Login"
     
+    // Mock
+    static let mockTitle = "Will be available soonWill be available soonWill be available soonWill be available soonWill be available soon"
+    
+    // Profile
+    static let profileTitle = "Profile"
+    static let profileChangePhotoButtonTitle = "Change photo"
+    static let profileUsername = "Satria Adhi Pradana"
+    static let profileUploadItemButtonTitle = "Upload item"
+    static let profileTradeStore = "Trade store"
+    static let profilePaymentMethod = "Payment method"
+    static let profileBalance = "Balance"
+    static let profileBalanceAmount = "$ 1593"
+    static let profilePaymentHistory = "Payment History"
+    static let profileRestorePurchase = "Restore Purchase"
+    static let profileHelp = "Help"
+    static let profileLogOut = "Log out"
 }
 

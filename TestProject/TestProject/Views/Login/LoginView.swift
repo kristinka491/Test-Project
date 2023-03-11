@@ -59,8 +59,9 @@ struct LoginView: View {
             .padding(.leading, 44)
             .padding(.trailing, 42)
         }.navigationDestination(isPresented: $viewModel.isRegistered) {
-            HomeView()
-        }.alert(DataError.wrongUsernameOrPassword.title, isPresented: $viewModel.isShowError) {
+            TabbarView()
+        }.toolbar(.hidden)
+        .alert(DataError.wrongUsernameOrPassword.title, isPresented: $viewModel.isShowError) {
         } message: {
             Text(DataError.wrongUsernameOrPassword.message)
         }

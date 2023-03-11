@@ -18,6 +18,8 @@ extension Color {
     static let buttonForegroundColor = Color.hexStringToColor(hex: "#EAEAEA")
     static let additionalTextColor = Color.hexStringToColor(hex: "#808080")
     static let loginButtonColor = Color.hexStringToColor(hex: "#254FE6")
+    static let iconsColor = Color.hexStringToColor(hex: "#909090")
+    static let selectedTabBarItemColor = Color.hexStringToColor(hex: "#EEEFF4")
     
     static func hexStringToColor(hex: String) -> Color {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()

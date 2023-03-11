@@ -26,7 +26,7 @@ class SignInViewModel: ObservableObject {
         setUpValidations()
     }
 
-    func saveUser() {
+    func registerUser() {
         let isUserRegistered = realmDataStore.addUser(firstName: firstName, lastName: lastName, email: email)
         if !isUserRegistered {
             isShowError = true
