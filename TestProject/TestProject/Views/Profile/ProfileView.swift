@@ -42,7 +42,9 @@ struct ProfileView: View {
                 .scrollContentBackground(.hidden)
                 .listStyle(.plain)
             }
-        }.toolbar(.hidden, for: .navigationBar)
+            .padding(.bottom, 63)
+        }
+        
     }
 }
 

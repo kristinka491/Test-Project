@@ -42,7 +42,7 @@ class RealmDataStore {
         try? realm?.write {
             realm?.add(user)
         }
-        print("Data Was Saved To Realm Database.")
+        debugPrint("Data Was Saved To Realm Database.")
     }
 }
 

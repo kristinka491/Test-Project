@@ -49,5 +49,15 @@ struct StringConstants {
     static let profileRestorePurchase = "Restore Purchase"
     static let profileHelp = "Help"
     static let profileLogOut = "Log out"
+    
+    // Home
+    static let homeTitleOne = "Trade by"
+    static let homeTitleTwo = "bata"
+    static let homeLocations = "Location"
+    static let homeSearchPlaceholder = "What are you looking for?"
+    static let homeLatest = "Latest"
+    static let homeViewAll = "View all"
+    static let homeFlashSale = "Flash Sale"
+    static let homeBrands = "Brands"
 }
 
