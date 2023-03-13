@@ -36,6 +36,7 @@ extension Color {
     static let borderColor = Color.hexStringToColor(hex: "#ADADAD")
     static let addToCartTitleColor = Color.hexStringToColor(hex: "#99A0FF")
     static let viewBackground = Color.hexStringToColor(hex: "#181726")
+    static let detailImageBorderColor = Color.hexStringToColor(hex: "EBEBEB")
     
     static func hexStringToColor(hex: String) -> Color {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()

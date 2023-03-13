@@ -11,6 +11,10 @@ struct DetailGoodsView: View {
     @Environment(\.dismiss) private var dismiss
     @StateObject var viewModel = DetailGoodsViewModel()
     
+    init() {
+        UIScrollView.appearance().isPagingEnabled = true
+    }
+    
     var body: some View {
         ZStack {
             Color.backgroundColor
@@ -34,10 +38,8 @@ struct DetailGoodsView: View {
                 
                 ScrollView(showsIndicators: false) {
                     VStack(spacing: 0) {
-                        LargeImagesCollection(imageURLS: viewModel.detailGoodsModel.imageURLS ?? [])
-                        
-                        SmallImagesCollection(imageURLS: viewModel.detailGoodsModel.imageURLS ?? [])
-                        
+                        ImagesCollection(viewModel: viewModel)
+                                                
                         GoodsDescription(detailGoodsModel: viewModel.detailGoodsModel)
                     }
                 }

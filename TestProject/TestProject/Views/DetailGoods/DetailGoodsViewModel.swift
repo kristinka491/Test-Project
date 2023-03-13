@@ -12,6 +12,7 @@ class DetailGoodsViewModel: ObservableObject, PriceFormatter {
     @Published var detailGoodsModel = DetailGoods()
     @Published var counterValue: Int = 0
     @Published var totalPrice: String = "$ 0"
+    @Published var selectedImageUrl = ""
 
     private let networkManager = NetworkManager.shared
     private var publishers = Set<AnyCancellable>()
@@ -34,6 +35,7 @@ class DetailGoodsViewModel: ObservableObject, PriceFormatter {
             switch detailsModel {
             case .success(let model):
                 detailGoodsModel = model
+                selectedImageUrl = model.imageURLS?.first ?? ""
             case .failure(let error):
                 debugPrint(error.localizedDescription)
             }
