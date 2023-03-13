@@ -29,6 +29,13 @@ extension Color {
     static let addButtonColor = Color.hexStringToColor(hex: "#545589")
     static let addButtonAdditionalColor = Color.hexStringToColor(hex: "#E5E9EFD9")
     static let discountBackgroundColor = Color.hexStringToColor(hex: "#F93A3A")
+    static let tabBarSelectionColor = Color.hexStringToColor(hex: "#737297")
+    static let additionalCategoryBackgroundColor = Color.hexStringToColor(hex: "#C4C4C4")
+    static let additionlButtonsColor = Color.hexStringToColor(hex: "#E5E9EF")
+    static let detailViewAdditionalColor = Color.hexStringToColor(hex: "#737373")
+    static let borderColor = Color.hexStringToColor(hex: "#ADADAD")
+    static let addToCartTitleColor = Color.hexStringToColor(hex: "#99A0FF")
+    static let viewBackground = Color.hexStringToColor(hex: "#181726")
     
     static func hexStringToColor(hex: String) -> Color {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()

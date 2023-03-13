@@ -11,16 +11,16 @@ import Moya
 class NetworkManager {
     static let shared = NetworkManager()
     
-    func doRequest<T: Decodable>(_ target: MultiTarget) async -> (T?, Error?) {
+    func doRequest<T: Decodable>(_ target: MultiTarget) async -> Result<T, Error> {
         return await withCheckedContinuation { continuation in
-            doRequest(target: target) { response, error in
-                    continuation.resume(returning: (response?.object, error))
+            doRequest(target: target) { result in
+                    continuation.resume(returning: result)
                 }
             }
     }
     
     private func doRequest<T: Decodable>(target: MultiTarget,
-                                         completion: ((LResponse<T>?, Error?) -> Void)?) {
+                                         completion: ((Result<T, Error>) -> Void)?) {
         let provider = MoyaProvider<MultiTarget>()
         
         provider.request(target) { [weak self] result in
@@ -30,53 +30,29 @@ class NetworkManager {
                 debugPrint(response.request?.allHTTPHeaderFields ?? "Can't unwrap")
                 debugPrint(response.response ?? "Can't unwrap")
 
-                let result = self?.httpValidation(response: response)
-                guard let data = result?.0 else {
-                    completion?(nil, result?.1)
-                    return
-                }
-                let jsonData = try? JSONSerialization.jsonObject(with: data)
+                let jsonData = try? JSONSerialization.jsonObject(with: response.data)
                 let json: Any? = jsonData as? [String: Any] ?? jsonData as? [Any] ?? nil
-                var response: LResponse<T> = LResponse(object: nil, data: json, error: nil)
-                debugPrint(json ?? "")
-                guard let modelData = json else {
-                    completion?(nil, result?.1)
+
+                let expected: (T?, Error?)? = self?.model(from: json)
+                guard let models = expected?.0 else {
+                    completion?(.failure(expected?.1 ?? NSError(domain: "Parsing Error", code: 400)))
                     return
                 }
-                guard let sself = self else {
-                    return
-                }
-                
-                DispatchQueue.global(qos: .userInitiated).async {
-                    let expected: (T?, Error?) = sself.model(from: modelData)
-                    guard let models = expected.0 else {
-                        completion?(response, expected.1)
-                        return
-                    }
-                    response.object = models
-                    completion?(response, nil)
-                }
+                completion?(.success(models))
             case .failure(let error):
                 debugPrint(error)
-                let response: LResponse<T> = LResponse(object: nil, data: nil, error: error as NSError)
-                completion?(response, error)
+                completion?(.failure(error))
             }
         }
     }
     
-    private func httpValidation(response: Response) -> (Data?, Error?) {
-        let httpValidator = HttpErrorValidator.isSucceeded(response)
-        if httpValidator.0 {
-            return (response.data, nil)
-        } else {
-            debugPrint(httpValidator.1 ?? "HTTP ERROR: Generic error")
-            return (nil, httpValidator.1)
-        }
-    }
-    
-    private func model<T>(from payload: Any) -> (T?, Error?) where T: Decodable {
+    private func model<T>(from payload: Any?) -> (T?, Error?) where T: Decodable {
         let decoder = JSONDecoder()
         do {
+            guard let payload =  payload else {
+                return (nil, nil)
+            }
+            
             let json = try JSONSerialization.data(withJSONObject: payload, options: .prettyPrinted)
             let model = try decoder.decode(T.self, from: json)
             return (model, nil)

@@ -14,6 +14,7 @@ struct SaleGoodsCell: View {
         ZStack {
             AsyncImage(url: URL(string: item.imageURL ?? "")) { image in
                 image.resizable()
+                    .aspectRatio(contentMode: .fill)
             } placeholder: {
                 ProgressView()
             }
@@ -46,7 +47,7 @@ struct SaleGoodsCell: View {
                         .font(.montserrat(.bold, size: 10))
                         .foregroundColor(Color.homeCategoryColor)
                         .padding([.leading, .trailing], 16)
-                        .background(Color.additionalCategoriesColor)
+                        .background(Color.additionalCategoryBackgroundColor)
                         .opacity(0.85)
                         .cornerRadius(9)
                     
@@ -56,7 +57,7 @@ struct SaleGoodsCell: View {
                
                 Text(item.name ?? "")
                     .font(.montserrat(.bold, size: 15))
-                    .lineLimit(1)
+                    .lineLimit(2)
                     .foregroundColor(.white)
                 
                 HStack(spacing: 5) {
@@ -69,13 +70,13 @@ struct SaleGoodsCell: View {
                     Image("Heart")
                         .frame(width: 28, height: 28)
                         .foregroundColor(.addButtonColor)
-                        .background(Color.addButtonAdditionalColor)
+                        .background(Color.additionlButtonsColor)
                         .clipShape(Circle())
                     
                     Image(systemName: "plus")
                         .frame(width: 35, height: 35)
                         .foregroundColor(.addButtonColor)
-                        .background(Color.addButtonAdditionalColor)
+                        .background(Color.additionlButtonsColor)
                         .clipShape(Circle())
                 }
                 .padding(.trailing, 4)

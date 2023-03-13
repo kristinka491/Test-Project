@@ -59,5 +59,10 @@ struct StringConstants {
     static let homeViewAll = "View all"
     static let homeFlashSale = "Flash Sale"
     static let homeBrands = "Brands"
+    
+    // DetailGoods
+    static let detailGoodsColor = "Color:"
+    static let detailGoodsQuantity = "Quantity:"
+    static let detailGoodsAddToCartButtonTitle = "ADD TO CART"
 }
 

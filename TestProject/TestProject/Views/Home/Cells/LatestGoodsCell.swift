@@ -14,6 +14,7 @@ struct LatestGoodsCell: View {
         ZStack {
             AsyncImage(url: URL(string: item.imageURL ?? "")) { image in
                 image.resizable()
+                    .aspectRatio(contentMode: .fill)
             } placeholder: {
                 ProgressView()
             }
@@ -30,7 +31,7 @@ struct LatestGoodsCell: View {
                         .foregroundColor(Color.homeCategoryColor)
                         .padding(.leading, 8)
                         .padding(.trailing, 7)
-                        .background(Color.additionalCategoriesColor)
+                        .background(Color.additionalCategoryBackgroundColor)
                         .opacity(0.85)
                         .cornerRadius(8)
                     
@@ -53,7 +54,7 @@ struct LatestGoodsCell: View {
                     Image(systemName: "plus")
                         .frame(width: 20, height: 20)
                         .foregroundColor(.addButtonColor)
-                        .background(Color.addButtonAdditionalColor)
+                        .background(Color.additionlButtonsColor)
                         .opacity(0.85)
                         .clipShape(Circle())
                 }

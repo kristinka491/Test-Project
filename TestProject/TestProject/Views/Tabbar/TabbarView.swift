@@ -36,7 +36,7 @@ struct TabbarView: View {
                         Image(systemName: item.icon)
                             .imageScale(.medium)
                             .padding()
-                            .foregroundColor(Color.iconsColor)
+                            .foregroundColor(viewModel.buttonsStyle[index].isSelected ? Color.tabBarSelectionColor : Color.iconsColor)
                         }
                     }
                     .buttonStyle(viewModel.buttonsStyle[index])
@@ -46,7 +46,7 @@ struct TabbarView: View {
             }
             .frame(height: 63)
             .background( Color.white)
-            .cornerRadius(20, corners: [.topLeft, .topRight])
+            .cornerRadius(27, corners: [.topLeft, .topRight])
         }
     }
 }
