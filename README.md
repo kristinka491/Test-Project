@@ -18,7 +18,7 @@ For installation of all third-party libraries just type in console pod install. 
 
 
 ## Project Status
-Project is: complete.
+Project is: completed.
 
 
 <!-- Optional -->
