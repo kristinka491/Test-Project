@@ -32,15 +32,17 @@ struct ProfileView: View {
                     .padding(.bottom, 20)
                 }
                 
-                List(viewModel.profileSettings, id: \.title) { item in
-                    if case .header = item {
-                      ProfileHeaderCell(viewModel: viewModel)
-                    } else {
-                        ProfileSettingsCell(item: item)
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(spacing: 0) {
+                        ForEach(viewModel.profileSettings, id: \.title) { item in
+                            if case .header = item {
+                              ProfileHeaderCell(viewModel: viewModel)
+                            } else {
+                                ProfileSettingsCell(item: item)
+                            }
+                        }
                     }
                 }
-                .scrollContentBackground(.hidden)
-                .listStyle(.plain)
             }
             .padding(.bottom, 63)
         }

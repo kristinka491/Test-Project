@@ -59,10 +59,10 @@ struct LoginView: View {
             .padding(.leading, 44)
             .padding(.trailing, 42)
         }
+        .toolbar(.hidden)
         .fullScreenCover(isPresented: $viewModel.isRegistered) {
             TabbarView()
         }
-        .toolbar(.hidden)
         .alert(DataError.wrongUsernameOrPassword.title, isPresented: $viewModel.isShowError) {
         } message: {
             Text(DataError.wrongUsernameOrPassword.message)

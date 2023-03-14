@@ -65,8 +65,7 @@ struct ProfileHeaderCell: View {
             .padding(.trailing, 42)
         }
         .background(Color.backgroundColor)
-        .listRowBackground(Color.backgroundColor)
-        .listRowInsets(.init(top: 0, leading: 0, bottom: 4, trailing: 0))
+        .padding(.bottom, 4)
     }
 }
 

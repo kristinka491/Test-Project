@@ -11,7 +11,7 @@ struct SignInView: View {
     @StateObject var viewModel = SignInViewModel()
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ZStack {
                 Color.backgroundColor
                     .ignoresSafeArea()
@@ -31,6 +31,7 @@ struct SignInView: View {
                         VStack {
                             AuthorizationTextField(placeHolder: StringConstants.signInEmailPlaceholder,
                                                    text: $viewModel.email)
+                            .textInputAutocapitalization(.never)
                             if !viewModel.isEmailValid {
                                 Text(StringConstants.signInInvalidEmail)
                                     .font(.montserrat(.bold, size: 10))
@@ -51,7 +52,7 @@ struct SignInView: View {
                         .opacity(viewModel.isSaveButtonDisabled ? 0.5 : 1)
                         .background(Color.buttonBackgroundColor)
                         .cornerRadius(15)
-                    
+                        
                     }
                     .padding(.leading, 44)
                     .padding(.trailing, 42)
@@ -61,7 +62,7 @@ struct SignInView: View {
                             .font(.montserrat(.bold, size: 10))
                             .multilineTextAlignment(.leading)
                             .foregroundColor(.additionalTextColor)
-                            
+                        
                         NavigationLink(destination: LoginView()) {
                             Text(StringConstants.signInLoginButtonTitle)
                                 .frame(width: 48)
@@ -100,10 +101,12 @@ struct SignInView: View {
                     .padding(.trailing, 99)
                 }
             }
-            .fullScreenCover(isPresented: $viewModel.isRegistered) {
-                TabbarView()
-            }
-        }.alert(DataError.userIsRegistered.title, isPresented: $viewModel.isShowError) {
+            
+        }
+        .fullScreenCover(isPresented: $viewModel.isRegistered) {
+            TabbarView()
+        }
+        .alert(DataError.userIsRegistered.title, isPresented: $viewModel.isShowError) {
         } message: {
             Text(DataError.userIsRegistered.message)
         }

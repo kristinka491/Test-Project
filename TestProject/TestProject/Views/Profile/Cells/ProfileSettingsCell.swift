@@ -22,21 +22,20 @@ struct ProfileSettingsCell: View {
             Text(item.title ?? "")
                 .font(.montserrat(.regular, size: 14))
             
-            
+            Spacer()
+
             if let _ = item.nextView {
-                Spacer()
                 Image("NavigationButton")
             }
             if case .balance(let amount) = item {
-                Spacer()
                 Text(amount)
                     .font(.montserrat(.regular, size: 14))
             }
         }
         .frame(height: 60)
-        .listRowSeparator(.hidden)
-        .listRowBackground(Color.backgroundColor)
-        .listRowInsets(.init(top: 0, leading: 32, bottom: 0, trailing: 46))
+        .background(Color.backgroundColor)
+        .padding(.leading, 32)
+        .padding(.trailing, 46)
         .onTapGesture {
             if case .logOut = item {
                 presentationMode.wrappedValue.dismiss()

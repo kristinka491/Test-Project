@@ -29,7 +29,7 @@ struct HomeView: View {
                             .frame(height: 24)
                             .font(.montserrat(.regular, size: 10))
                             .foregroundColor(.homeTextColor)
-                        
+                            
                         Image(systemName: "magnifyingglass")
                             .resizable()
                             .frame(width: 10, height: 10)
@@ -107,6 +107,8 @@ struct HomeView: View {
                 .padding([.leading, .trailing], 32)
                 .padding(.top, 89)
                 .opacity(viewModel.hintsText.isEmpty ? 0 : 1)
+            }.onDisappear() {
+                viewModel.searchText = ""
             }
         }
         .onTapGesture {
