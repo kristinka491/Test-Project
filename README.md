@@ -8,7 +8,10 @@
 
 
 ## Technologies Used
-- SwiftUI - version 3.0
+- Xcode - version 14.2
+- iOS - minimum version 16.2
+- SwiftUI - version 4.0
+- Swift - version 5
 - Moya - version 15.0
 - Realm - version 12.11.00
 
