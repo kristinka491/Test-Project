@@ -63,6 +63,14 @@ struct ProfileHeaderCell: View {
             .padding(.top, 38)
             .padding(.leading, 43)
             .padding(.trailing, 42)
+        }.onAppear {
+            PHPhotoLibrary.requestAuthorization { status in
+                if status == .authorized {
+                    print("User has granted photo library access")
+                } else {
+                    print("User has denied photo library access")
+                }
+            }
         }
         .background(Color.backgroundColor)
         .padding(.bottom, 4)

@@ -7,5 +7,7 @@
 		<string>Montserrat-Regular.ttf</string>
 		<string>Montserrat-Bold.ttf</string>
 	</array>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Profile uses photos</string>
 </dict>
 </plist>
