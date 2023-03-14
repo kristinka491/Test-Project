@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class DetailGoodsViewModel: ObservableObject, PriceFormatter {
-    @Published var detailGoodsModel = DetailGoods()
+    @Published var detailGoodsModel = DetailGoodsModel()
     @Published var counterValue: Int = 0
     @Published var totalPrice: String = "$ 0"
     @Published var selectedImageUrl = ""

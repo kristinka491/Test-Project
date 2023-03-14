@@ -1,5 +1,5 @@
 //
-//  DetailGoods.swift
+//  DetailGoodsModel.swift
 //  TestProject
 //
 //  Created by Krystsina on 2023-03-13.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DetailGoods: Decodable, PriceFormatter {
+struct DetailGoodsModel: Decodable, PriceFormatter {
     var name: String?
     var description: String?
     var rating: Double?

@@ -87,7 +87,30 @@ struct HomeView: View {
                     Spacer()
                 }
                 .padding(.bottom, 63)
+                
+                VStack(spacing: 0) {
+                    ForEach(viewModel.hintsText, id: \.self) { item in
+                        Text(item)
+                            .font(.montserrat(.regular, size: 12))
+                            .frame(maxWidth: .infinity)
+                            .background(Color.white)
+                                
+                        if item != viewModel.hintsText.last {
+                            Divider()
+                                .frame(height: 5)
+                                .background(Color.white)
+                        }
+                    }
+                    
+                    Spacer ()
+                }
+                .padding([.leading, .trailing], 32)
+                .padding(.top, 89)
+                .opacity(viewModel.hintsText.isEmpty ? 0 : 1)
             }
+        }
+        .onTapGesture {
+            viewModel.hintsText = []
         }
         .onAppear() {
             viewModel.getAllGoods()

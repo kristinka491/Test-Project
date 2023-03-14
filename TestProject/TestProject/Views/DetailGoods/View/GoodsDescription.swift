@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GoodsDescription: View {
-    var detailGoodsModel: DetailGoods
+    var detailGoodsModel: DetailGoodsModel
     
     var body: some View {
         VStack(spacing: 0) {
@@ -86,6 +86,6 @@ struct GoodsDescription: View {
 
 struct GoodsDescription_Previews: PreviewProvider {
     static var previews: some View {
-        GoodsDescription(detailGoodsModel: DetailGoods())
+        GoodsDescription(detailGoodsModel: DetailGoodsModel())
     }
 }

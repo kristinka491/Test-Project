@@ -40,18 +40,15 @@ struct ImagesCollection: View {
                                 Spacer()
 
                                 let isSelected = viewModel.selectedImageUrl == item
-                                let width: CGFloat = isSelected ? 83 : 65
-                                let height: CGFloat = isSelected ? 45 : 37
-                                let cornerRadius: CGFloat = isSelected ? 10 : 8
-                                
+                                let config = getConfiguration(isSelected: isSelected)
                                 AsyncImage(url: URL(string: item)) { image in
                                     image.resizable()
                                         .aspectRatio(contentMode: .fill)
                                 } placeholder: {
                                     ProgressView()
                                 }
-                                .frame(width: width, height: height)
-                                .cornerRadius(cornerRadius)
+                                .frame(width: config.width, height: config.height)
+                                .cornerRadius(config.cornerRadius)
                                 .overlay(
                                         RoundedRectangle(cornerRadius: cornerRadius)
                                             .stroke(isSelected ? .clear : .detailImageBorderColor, lineWidth: 1)
@@ -74,6 +71,14 @@ struct ImagesCollection: View {
                 Spacer()
             }
         }
+    }
+    
+    private func getConfiguration(isSelected: Bool) -> (width: CGFloat, height: CGFloat, cornerRadius: CGFloat) {
+        let width: CGFloat = isSelected ? 83 : 65
+        let height: CGFloat = isSelected ? 45 : 37
+        let cornerRadius: CGFloat = isSelected ? 10 : 8
+        return (width: width, height: height, cornerRadius: cornerRadius)
+        
     }
 }
 

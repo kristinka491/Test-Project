@@ -18,11 +18,11 @@ extension NetworkManager {
         return await doRequest(MultiTarget(GoodsEndpoint.saleGoods))
     }
     
-    func getDetailGoods() async -> Result<DetailGoods, Error> {
+    func getDetailGoods() async -> Result<DetailGoodsModel, Error> {
         return await doRequest(MultiTarget(GoodsEndpoint.detailGoods))
     }
     
-    func getSearchedGoods() async -> Result<GoodsModel, Error> {
+    func getSearchedGoods() async -> Result<SearchWordsModel, Error> {
         return await doRequest(MultiTarget(GoodsEndpoint.searchedGoods))
     }
 }
