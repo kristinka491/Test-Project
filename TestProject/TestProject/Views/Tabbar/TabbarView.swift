@@ -22,7 +22,8 @@ struct TabbarView: View {
                     AnyView(_fromValue: item.page)
                         .tabItem{
                             EmptyView()
-                        }.tag(item.tag)
+                        }
+                        .tag(item.tag)
                 }
             }
             

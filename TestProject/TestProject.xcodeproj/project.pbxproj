@@ -58,6 +58,7 @@
 		3EB2D31329BE0AA300897867 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB2D31229BE0AA300897867 /* CategoryCell.swift */; };
 		3EB2D31529BE0E1400897867 /* GoodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB2D31429BE0E1400897867 /* GoodsModel.swift */; };
 		3EB2D31729BE10CC00897867 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB2D31629BE10CC00897867 /* HeaderView.swift */; };
+		3EF5DA7C29CC2DA50045E83D /* UIApplication+Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5DA7B29CC2DA50045E83D /* UIApplication+Extension .swift */; };
 		71B10BCC86523EB53AD12F63 /* Pods_TestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D379B022C202E0223926801E /* Pods_TestProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +133,7 @@
 		3EB2D31229BE0AA300897867 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		3EB2D31429BE0E1400897867 /* GoodsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsModel.swift; sourceTree = "<group>"; };
 		3EB2D31629BE10CC00897867 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		3EF5DA7B29CC2DA50045E83D /* UIApplication+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension .swift"; sourceTree = "<group>"; };
 		BBABFA68C78ACF6634D19EC9 /* Pods-TestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProject.debug.xcconfig"; path = "Target Support Files/Pods-TestProject/Pods-TestProject.debug.xcconfig"; sourceTree = "<group>"; };
 		D379B022C202E0223926801E /* Pods_TestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -280,6 +282,7 @@
 				3E59975429BB2C2800C6453E /* Font+Extension.swift */,
 				3E59976429BB329B00C6453E /* Color+Extension.swift */,
 				3E59978729BCA2F700C6453E /* View+Extension.swift */,
+				3EF5DA7B29CC2DA50045E83D /* UIApplication+Extension .swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				3E59978A29BCA84700C6453E /* StaticButtonStyle.swift in Sources */,
 				3E59978C29BCAACC00C6453E /* TabBarViewModel.swift in Sources */,
 				3E59978429BB7F6E00C6453E /* ProfileViewModel.swift in Sources */,
+				3EF5DA7C29CC2DA50045E83D /* UIApplication+Extension .swift in Sources */,
 				3EB2D31029BE051D00897867 /* CategoryEnum.swift in Sources */,
 				3E448F8529BE32BD008AA5F3 /* HomeNavigationView.swift in Sources */,
 				3E59978E29BCAB6C00C6453E /* TabBarPage.swift in Sources */,

@@ -63,6 +63,6 @@ struct StringConstants {
     // DetailGoods
     static let detailGoodsColor = "Color:"
     static let detailGoodsQuantity = "Quantity:"
-    static let detailGoodsAddToCartButtonTitle = "ADD TO CART"
+    static let detailGoodsAddToCartButtonTitle = "ADD TO CART"    
 }
 

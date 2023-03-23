@@ -12,14 +12,16 @@ struct AuthorizationTextField: View {
     @Binding var text: String
     
     var body: some View {
-        TextField(placeHolder, text: $text)
-            .multilineTextAlignment(.center)
-            .frame(height: 29)
-            .font(.montserrat(.regular, size: 12))
-            .foregroundColor(.placeholderColor)
-            .background(Color.placeholderBackgroundColor)
-            .cornerRadius(20)
-            .autocorrectionDisabled(true)
+        TextField(placeHolder, text: $text) {
+            UIApplication.shared.endEditing()
+        }
+        .multilineTextAlignment(.center)
+        .frame(height: 29)
+        .font(.montserrat(.regular, size: 12))
+        .foregroundColor(.placeholderColor)
+        .background(Color.placeholderBackgroundColor)
+        .cornerRadius(20)
+        .autocorrectionDisabled(true)
     }
 }
 

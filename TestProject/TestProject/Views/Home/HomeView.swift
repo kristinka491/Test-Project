@@ -24,11 +24,13 @@ struct HomeView: View {
                     HomeNavigationView()
                     
                     HStack(spacing: 0) {
-                        TextField(StringConstants.homeSearchPlaceholder, text: $viewModel.searchText)
-                            .multilineTextAlignment(.center)
-                            .frame(height: 24)
-                            .font(.montserrat(.regular, size: 10))
-                            .foregroundColor(.homeTextColor)
+                        TextField(StringConstants.homeSearchPlaceholder, text: $viewModel.searchText) {
+                            UIApplication.shared.endEditing()
+                        }
+                        .multilineTextAlignment(.center)
+                        .frame(height: 24)
+                        .font(.montserrat(.regular, size: 10))
+                        .foregroundColor(.homeTextColor)
                             
                         Image(systemName: "magnifyingglass")
                             .resizable()
@@ -84,6 +86,7 @@ struct HomeView: View {
                         }
                     }
                     .padding(.leading, 11)
+                    
                     Spacer()
                 }
                 .padding(.bottom, 63)
@@ -107,11 +110,14 @@ struct HomeView: View {
                 .padding([.leading, .trailing], 32)
                 .padding(.top, 89)
                 .opacity(viewModel.hintsText.isEmpty ? 0 : 1)
-            }.onDisappear() {
+            }
+            .onDisappear() {
                 viewModel.searchText = ""
             }
+            .ignoresSafeArea(.keyboard)
         }
         .onTapGesture {
+            UIApplication.shared.endEditing()
             viewModel.hintsText = []
         }
         .onAppear() {

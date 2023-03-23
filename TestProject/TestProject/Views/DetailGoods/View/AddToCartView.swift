@@ -38,11 +38,13 @@ struct AddToCartView: View {
                 }
                 .padding(.leading, 24)
                 
-                HStack(spacing: 33) {
+                HStack(spacing: 0) {
                     Text(viewModel.totalPrice)
                         .font(.montserrat(.regular, size: 10))
                         .foregroundColor(.addToCartTitleColor)
                         .padding(.leading, 30)
+                    
+                    Spacer(minLength: 8)
                     
                     Text(StringConstants.detailGoodsAddToCartButtonTitle)
                         .font(.montserrat(.bold, size: 10))

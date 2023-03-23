@@ -25,13 +25,15 @@ struct LoginView: View {
                                            text: $viewModel.firstName)
                     
                     HStack {
-                        SecureField(StringConstants.loginPasswordPlaceholder, text: $viewModel.password)
-                            .multilineTextAlignment(.center)
-                            .frame(height: 29)
-                            .font(.montserrat(.regular, size: 12))
-                            .foregroundColor(.placeholderColor)
-                            .autocorrectionDisabled(true)
-                            .padding(.leading, 30)
+                        SecureField(StringConstants.loginPasswordPlaceholder, text: $viewModel.password) {
+                            UIApplication.shared.endEditing()
+                        }
+                        .multilineTextAlignment(.center)
+                        .frame(height: 29)
+                        .font(.montserrat(.regular, size: 12))
+                        .foregroundColor(.placeholderColor)
+                        .autocorrectionDisabled(true)
+                        .padding(.leading, 30)
                         
                         Image("SecureEntry")
                             .padding(.trailing, 15)

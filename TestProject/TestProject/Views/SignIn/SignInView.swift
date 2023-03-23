@@ -31,7 +31,7 @@ struct SignInView: View {
                         VStack {
                             AuthorizationTextField(placeHolder: StringConstants.signInEmailPlaceholder,
                                                    text: $viewModel.email)
-                            .textInputAutocapitalization(.never)
+                                .textInputAutocapitalization(.never)
                             if !viewModel.isEmailValid {
                                 Text(StringConstants.signInInvalidEmail)
                                     .font(.montserrat(.bold, size: 10))
