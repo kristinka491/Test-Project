@@ -42,7 +42,6 @@ struct TabbarView: View {
                     }
                     .buttonStyle(viewModel.buttonsStyle[index])
                     .frame(maxWidth: .infinity)
-                    
                 }
             }
             .frame(height: 63)

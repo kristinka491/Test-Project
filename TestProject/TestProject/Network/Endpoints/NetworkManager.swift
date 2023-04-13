@@ -30,10 +30,7 @@ class NetworkManager {
                 debugPrint(response.request?.allHTTPHeaderFields ?? "Can't unwrap")
                 debugPrint(response.response ?? "Can't unwrap")
 
-                let jsonData = try? JSONSerialization.jsonObject(with: response.data)
-                let json: Any? = jsonData as? [String: Any] ?? jsonData as? [Any] ?? nil
-
-                let expected: (T?, Error?)? = self?.model(from: json)
+                let expected: (T?, Error?)? = self?.model(from: response.data)
                 guard let models = expected?.0 else {
                     completion?(.failure(expected?.1 ?? NSError(domain: "Parsing Error", code: 400)))
                     return
@@ -46,15 +43,10 @@ class NetworkManager {
         }
     }
     
-    private func model<T>(from payload: Any?) -> (T?, Error?) where T: Decodable {
+    private func model<T>(from payload: Data) -> (T?, Error?) where T: Decodable {
         let decoder = JSONDecoder()
         do {
-            guard let payload =  payload else {
-                return (nil, nil)
-            }
-            
-            let json = try JSONSerialization.data(withJSONObject: payload, options: .prettyPrinted)
-            let model = try decoder.decode(T.self, from: json)
+            let model = try decoder.decode(T.self, from: payload)
             return (model, nil)
         } catch let error {
             debugPrint("\n Error JSON data: \(error)")

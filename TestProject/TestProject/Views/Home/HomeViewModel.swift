@@ -69,7 +69,7 @@ class HomeViewModel: ObservableObject {
     }
     
     @MainActor private func getHintsText(with search: String) async {
-        let searchModel = await self.networkManager.getSearchedGoods() // no global actor attribute
+        let searchModel = await self.networkManager.getSearchedGoods()
         switch searchModel {
         case .success(let model):
             hintsText = model.words?.filter { $0.contains(search) } ?? []
